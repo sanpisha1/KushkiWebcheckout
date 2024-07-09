@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>    
+   <meta charset="UTF-8">
+    <title>Kushki Web Checkout</title>
+    <meta name="title" content="Título de la WEB">
+    <link href="https://docs.kushki.com/favicon-32x32.png?v=d79afd180c02246935a8aefeab4e7bbe" rel="icon" type="image/svg">
+    <meta name="description" content="Descripción de la WEB">
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <script src="https://cdn.kushkipagos.com/kushki-checkout.js"></script>
+</head>
+<body>
+    <img class="image" src="https://uat-console.kushkipagos.com/login/11441fb761559cede844e04af1985956.svg"> 
+  <body>
+    <form>
+      <label>Create your own Webcheckout!</label>
+       <select id="environment" >
+          <option value="https://api-uat.kushkipagos.com/smartlink/v1/webcheckout">Environment:</option>
+          <option value="https://api-uat.kushkipagos.com/smartlink/v1/webcheckout">UAT</option>
+          <option value="https://api.kushkipagos.com/smartlink/v1/webcheckout">LIVE</option>
+        </select>
+
+      <input type="password" id="privateMerchantId" name="PrivateMerchantId" placeholder="Private Merchant Id:" required>
+
+      <input type="text" id="name" name="nombre" placeholder="Holder Name:" required>
+
+      <label for="pmethods">Payment Methods:</label>
+      <label><input type="checkbox" name="pmethod" value="transfer"> Transfer</label>
+      <label><input type="checkbox" name="pmethod" value="credit-card">Credit Card</label>
+      <label><input type="checkbox" name="pmethod" value="cash"> Cash</label>
+
+      <select id="currency" >
+          <option value="#">Currency:</option>
+          <option value="COP">COP</option>
+          <option value="MXN">MXN</option>
+          <option value="PEN">PEN</option>
+          <option value="CLP">CLP</option>
+          <option value="USD">USD</option>
+        </select>
+
+      <input type="number" id="amount" name="monto" min="0" step="0.01" placeholder="Amount:" required>
+
+      <input type="button" value="Submit" onclick="obtenerDatos()">
+    </form>
+    <div id="result" style="display:none"></div> 
+
+<script src ="index.js" type="text/javascript"></script>
+
+</body>  
+</html>
+
